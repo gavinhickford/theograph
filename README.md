@@ -52,7 +52,7 @@ Express server listening on port 3000
 
 Now you should be able to open a browser at http://localhost:3000/theograph/newevent. 
 At the moment you will need to add at least two events for the theograph to render. 
-Date needs to be entered in the format yyyy-mm-dd 
+The start and end dates need to be entered in the format yyyy-mm-dd. 
 
 There is an imagemap file in the theograph\public\images called image_maps_small.json, which maps an image in the images folder to a type of event. 
 

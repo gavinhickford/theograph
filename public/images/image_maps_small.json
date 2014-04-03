@@ -1,0 +1,21 @@
+{
+    "imageHeight" : "24",
+    "imageWidth" : "24",
+    "type": 
+	{
+        "Referral": "images/referral.png"
+		, "Transfer": "images/transfer.png"
+        , "Discharge": "images/discharge.png"
+		, "OOH Appointment": "images/ooh.png"
+		, "GP Appointment": "images/gp.png"
+		, "Clinic Appointment": "images/clinic.png"
+		, "Emergency Admission": "images/emergency.png"
+		, "Elective Admission": "images/elective.png"
+		, "Surgery": "images/clinic.png"
+		, "Prescription": "images/gp.png"
+		, "Treatment": "images/gp.png"
+	}, 
+	"specialty-id": 
+	{
+    } 
+}

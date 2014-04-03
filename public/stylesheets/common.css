@@ -1,0 +1,80 @@
+﻿body {
+  padding-top: 20px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+.zone-area {
+  stroke: #aaa;
+  stroke-linejoin: round;
+  stroke-width: 1px;
+}
+
+
+#vis {
+  width: 940px;
+  margin: auto;
+  float: left;
+}
+
+#vis-meta {
+  position: absolute;
+  left: 140px;
+  top: 420px;
+  color: rgb(102,102,102);
+}
+
+#vis-meta h3, p {
+  font-weight: 300;
+  margin: 0 0 0 0; 
+  padding: 0;
+}
+
+#vis-meta p.hint { 
+  margin-top: 0.25em; 
+  font-style: italic;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.brush .extent {
+  stroke: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges;
+}
+
+.node rect {
+  cursor: pointer;
+  fill: #fff;
+  fill-opacity: .5;
+  stroke: #3182bd;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+path.link {
+  fill: none;
+  stroke: #9ecae1;
+  stroke-width: 1.5px;
+}
+
+.category {
+    border-radius: 4px;
+      
+}
+
+.tick text {
+  font: 10px sans-serif;
+}
+
+.active
+{
+    fill: #bdd4fc;
+}

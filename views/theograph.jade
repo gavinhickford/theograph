@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+
+  #vis
+  script(src="javascripts/theographRenderer.js")
+  script(src="javascripts/d3-3.3.2.min.js")
+  script(src="javascripts/jquery-1.10.2.min.js")
+  script(type='text/javascript').
+    var data = !{JSON.stringify(eventlist)}
+    render_theograph = function(){
+      var theograph = Aridhia.DV.theograph_renderer()
+        .data(data)
+        .imageMapPath("images/image_maps_small.json")
+        .call()
+    };
+    render_theograph();
+    
+    

@@ -1,4 +1,4 @@
-theograph
+Theograph
 =========
 
 D3 Theograph 
@@ -22,7 +22,7 @@ npm install -g express
 3. mongodb - download the appropriate zip from http://mongodb.org/ and place the bin folder in the zip to a known location. 
 
 I haven't included any database files in the repository but it is very easy to create a database. 
-There is an empty data folder in the project. Navigate to the mongo bin folder in a command prompt, 
+Create an empty folder named 'data' in the project. Navigate to the mongo bin folder in a command prompt, 
 and type the following:
 
 mongod --dbpath <path to the data folder>
@@ -37,8 +37,8 @@ use nodetest1
 This will create the nodetest1 database. Data can be added from the mongo session, but I've added a page that will let you add data
 There are currently four fields:
  - type (the type of event)
- - specialty-name (the sepcialty the event applies to)
- - start ( the start date of the event)
+ - specialty-name (the specialty the event applies to)
+ - start (the start date of the event)
  - end (the end date of the event)
  
 To start the app and add data, navigate to the theograph folder on a command line and type:

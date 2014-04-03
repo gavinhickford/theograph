@@ -10,7 +10,7 @@ To create this project, I used the tutorial on http://cwbuecheler.com/web/tutori
 I started with a theograph renderer created for display in a simple web page, and 
 have updated it as a node.js application, using a mongodb database and using Jade for UI templating.
 
-To run this locaaly you'll need the following installed:
+To run this locally you'll need the following installed:
 
 1. Node.js - see the node website at http://nodejs.org/
 2. Express - this is a framework that takes Node from a barebones application and turns it into something that behaves 

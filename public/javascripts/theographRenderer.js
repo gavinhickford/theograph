@@ -190,6 +190,8 @@ Aridhia.DV = Aridhia.DV || {};
                    .attr("class", "tooltip")               
                    .style("opacity", 0);
 				
+				var formatDate = d3.time.format("%d-%m-%Y");
+			
                 var imageIcon = focus.append("g")
                     .selectAll("image")
                     .data(data)
@@ -208,7 +210,7 @@ Aridhia.DV = Aridhia.DV || {};
                         div.transition()        
                            .duration(200)      
                            .style("opacity", .5);      
-                        div .html(d.type + "<br/>" + d.start)  
+                        div .html(d.type + "<br/>" + formatDate(new Date(d.start)))  
                            .style("left", (d3.event.pageX) + "px")     
                            .style("top", (d3.event.pageY - 28) + "px");    
                         })                  
@@ -241,7 +243,20 @@ Aridhia.DV = Aridhia.DV || {};
 					.attr("width", 0)
                     .attr("height",rowHeight / 2 - 1)
                     .attr("fill", "#3385AD")
-                    .attr("opacity", 0.3);
+                    .attr("opacity", 0.3)
+					.on("mouseover", function(d) {      
+                        div.transition()        
+                           .duration(200)      
+                           .style("opacity", .5);      
+                        div .html(d.type + "<br/>" + formatDate(new Date(d.start)) + " - " + formatDate(new Date(d.end)))  
+                           .style("left", (d3.event.pageX) + "px")     
+                           .style("top", (d3.event.pageY - 28) + "px");    
+                        })                  
+                    .on("mouseout", function(d) {       
+                        div.transition()        
+                           .duration(500)      
+                           .style("opacity", 0);   
+                        });;
                 
                 durationRect.transition()
               		.attr("width", function(d){

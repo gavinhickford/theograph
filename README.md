@@ -55,7 +55,7 @@ Date needs to be entered in the format yyyy-mm-dd
 There is an imagemap file in the theograph\public\images called image_maps_small, which maps an image in the images folder to 
 a type of event. 
 
-Once data is added, you should see a theograph at http://localhost:3000/theograph/theograph
+Once data is added, you should see a theograph at http://localhost:3000/theograph
 
 
 

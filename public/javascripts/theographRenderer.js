@@ -186,6 +186,10 @@ Aridhia.DV = Aridhia.DV || {};
                     .attr("y", function (d, i) { return (i * rowHeight) + 4 + rowHeight / 2; });
 
                 // Add images for each event
+				var div = d3.select("body").append("div")   
+                   .attr("class", "tooltip")               
+                   .style("opacity", 0);
+				
                 var imageIcon = focus.append("g")
                     .selectAll("image")
                     .data(data)
@@ -199,7 +203,21 @@ Aridhia.DV = Aridhia.DV || {};
                         return yScale(d[categoryType]) - (imageHeight / 2);
                     })
                     .attr("width", imageWidth)
-		            .attr("height", imageHeight);
+		            .attr("height", imageHeight)
+			  	    .on("mouseover", function(d) {      
+                        div.transition()        
+                           .duration(200)      
+                           .style("opacity", .5);      
+                        div .html(d.type + "<br/>" + d.start)  
+                           .style("left", (d3.event.pageX) + "px")     
+                           .style("top", (d3.event.pageY - 28) + "px");    
+                        })                  
+                    .on("mouseout", function(d) {       
+                        div.transition()        
+                           .duration(500)      
+                           .style("opacity", 0);   
+                        });
+					
 					
 				imageIcon.transition()
                      .attr("x", function(d){
@@ -214,6 +232,8 @@ Aridhia.DV = Aridhia.DV || {};
                     .enter()
                     .append("rect")
 					.attr("class", "duration")
+					.attr("rx", 6)
+                    .attr("ry", 6)
                     .attr("x", labelWidth)
                     .attr("y", function(d) {
                         return yScale(d[categoryType]) - (imageHeight / 4);
@@ -278,7 +298,7 @@ Aridhia.DV = Aridhia.DV || {};
                         return xScale2(new Date(d.start));
                     })
 					.duration(1000);
-
+					
                 // add x axis for the date selector
                 context.append("g")
                     .attr("class", "x axis")

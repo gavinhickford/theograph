@@ -110,6 +110,13 @@ Aridhia.DV = Aridhia.DV || {};
                         .attr("x", function(d) {
                             return xScale(new Date(d.start)) - (rowHeight / 2);
                         });
+					focus.selectAll(".duration")
+                        .attr("x", function(d) {
+                            return xScale(new Date(d.start)) + 5;
+                        })
+						.attr("width", function(d){
+		                    return xScale(new Date(d.end)) - xScale(new Date(d.start)) 
+                        });
                 }
 				
 			    // define svg element
@@ -167,8 +174,6 @@ Aridhia.DV = Aridhia.DV || {};
 				innerRect.transition()
                     .attr("width",focusWidth - labelWidth)
 					.duration(1000);
-
-
 				
                 // add text for each category row
                 focus.append("g")
@@ -189,9 +194,6 @@ Aridhia.DV = Aridhia.DV || {};
                     .attr("xlink:href", function(d) {
                         return images.type[d.type];
                     })
-		            //.attr("x", function(d){
-		            //    return xScale(new Date(d.start)) - (imageWidth / 2);
-		            //})
 					.attr("x", labelWidth)
 		            .attr("y", function(d) {
                         return yScale(d[categoryType]) - (imageHeight / 2);
@@ -203,7 +205,32 @@ Aridhia.DV = Aridhia.DV || {};
                      .attr("x", function(d){
 		                return xScale(new Date(d.start)) - (imageWidth / 2)
                      })
-					 .duration(1000);						
+					 .duration(1000);
+
+				// Add the duration rect
+                var durationRect = focus.append("g")
+                    .selectAll("rect")
+                    .data(data)
+                    .enter()
+                    .append("rect")
+					.attr("class", "duration")
+                    .attr("x", labelWidth)
+                    .attr("y", function(d) {
+                        return yScale(d[categoryType]) - (imageHeight / 4);
+                    })
+					.attr("width", 0)
+                    .attr("height",rowHeight / 2 - 1)
+                    .attr("fill", "#3385AD")
+                    .attr("opacity", 0.3);
+                
+                durationRect.transition()
+              		.attr("width", function(d){
+		                return xScale(new Date(d.end)) - xScale(new Date(d.start)) 
+                     })
+					.attr("x", function(d){
+		                return xScale(new Date(d.start)) + 5 
+                     })
+					.duration(1000);
                 
                 // Add the x axis
                 focus.append("g")

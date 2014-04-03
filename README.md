@@ -6,9 +6,10 @@ D3 Theograph
 This is a very simple experimental app to use D3 to render a 'God's eye' view of patient events, allowing 
 a user to focus in on certain periods of time. 
 
-To create this project, I used the tutorial on http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/ as a rough guide.
-I started with a theograph renderer created for display in a simple web page, and 
+To create this project, I started with a theograph renderer created for display in a simple web page, and 
 have updated it as a node.js application, using a mongodb database and using Jade for UI templating.
+
+I used the tutorial on http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/ as a rough guide, and deployed it locally on a Windows 7 machine. 
 
 To run this locally you'll need the following installed:
 

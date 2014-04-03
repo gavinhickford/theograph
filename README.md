@@ -3,12 +3,13 @@ theograph
 
 D3 Theograph 
 
-This is a very simple experimental app to use D3 to render a 'gods eye' view of patient events, allowing 
+This is a very simple experimental app to use D3 to render a 'God's eye' view of patient events, allowing 
 a user to focus in on certain periods of time. 
 
 To create this project, I used the tutorial on http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/ as a rough guide.
-I started with a theograph renderer created for display in a simple web page. 
-This has now been updated as a node.js application, using a mongodb database and using Jade for UI templating.
+I started with a theograph renderer created for display in a simple web page, and 
+have updated it as a node.js application, using a mongodb database and using Jade for UI templating.
+
 To run this locaaly you'll need the following installed:
 
 1. Node.js - see the node website at http://nodejs.org/
@@ -52,8 +53,7 @@ Now you should be able to open a browser at http://localhost:3000/theograph/newe
 At the moment you will need to add at least two events for the theograph to render. 
 Date needs to be entered in the format yyyy-mm-dd 
 
-There is an imagemap file in the theograph\public\images called image_maps_small, which maps an image in the images folder to 
-a type of event. 
+There is an imagemap file in the theograph\public\images called image_maps_small.json, which maps an image in the images folder to a type of event. 
 
 Once data is added, you should see a theograph at http://localhost:3000/theograph
 
